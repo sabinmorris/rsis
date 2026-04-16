@@ -17,7 +17,7 @@ public class BankController {
     @Autowired
     private BankService bankService;
 
-    @PutMapping
+    @PostMapping
     public Bank insertBankInfo(@RequestBody InsertBankInfoDto req){
         return bankService.insertBankInfo(req);
     }

@@ -41,7 +41,7 @@ public class DocumentTypeService {
             DocumentType documentType1 = documentType.get();
             documentType1.setDocumentName(req.getDocumentName());
             documentType1.setUpdatedAt(LocalDateTime.now());
-            documentType1.setCreateBy(2L);
+            documentType1.setUpdatedBy(2L);
             return documentTypeRepository.save(documentType1);
         }else{
             return null;
