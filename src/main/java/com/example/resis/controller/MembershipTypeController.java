@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/v1/membershipType") //This is Api v1
+@RequestMapping("api/v1/membershipType")
 public class MembershipTypeController {
 
     @Autowired
