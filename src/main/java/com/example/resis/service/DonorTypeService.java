@@ -38,8 +38,8 @@ public class DonorTypeService {
         if(donorType.isPresent()){
             DonorType donorType1 = donorType.get();
             donorType1.setDonorName(req.getDonorName());
-            donorType1.setCreatedAt(LocalDateTime.now());
-            donorType1.setCreatedBy(2L);
+            donorType1.setUpdatedAt(LocalDateTime.now());
+            donorType1.setUpdatedBy(2L);
             return donorTypeRepository.save(donorType1);
         }else {
             return null;
