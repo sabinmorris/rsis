@@ -1,3 +1,3 @@
 FROM eclipse-temurin:17-jre
-COPY target/lookup-api.jar lookup-api.jar
-ENTRYPOINT ["java","-jar","/lookup-api.jar"]
+COPY target/lookups-api.jar lookups-api.jar
+ENTRYPOINT ["java","-jar","/lookups-api.jar"]

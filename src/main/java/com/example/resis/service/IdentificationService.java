@@ -39,8 +39,8 @@ public class IdentificationService {
         if(identification.isPresent()){
             Identification identification1 = identification.get();
             identification1.setIdentificationName(req.getIdentificationName());
-            identification1.setCreatedAt(LocalDateTime.now());
-            identification1.setCreatedBy(2L);
+            identification1.setUpdatedAt(LocalDateTime.now());
+            identification1.setUpdatedBy(2L);
             return identificationRepository.save(identification1);
         }else {
             return null;
