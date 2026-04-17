@@ -28,12 +28,12 @@ public class BankController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Bank> selectBankInfoById(Long id){
+    public Optional<Bank> selectBankInfoById(@PathVariable  Long id){
         return bankService.selectBankInfoById(id);
     }
 
     @PutMapping("/{id}")
-    public Bank updateBankInfo(@RequestBody InsertBankInfoDto req, Long id){
+    public Bank updateBankInfo(@RequestBody InsertBankInfoDto req, @PathVariable Long id){
         return bankService.updateBankInfo(req, id);
     }
 }

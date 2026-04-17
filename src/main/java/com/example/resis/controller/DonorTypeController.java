@@ -36,7 +36,7 @@ public class DonorTypeController {
     }
 
     @PutMapping("/{id}")
-    public DonorType updateDonorTypeInfo(@RequestBody InsertDonorTypeDto req, Long id){
+    public DonorType updateDonorTypeInfo(@RequestBody InsertDonorTypeDto req, @PathVariable Long id){
         return donorTypeService.updateDonorTypeInfo(req, id);
     }
 }

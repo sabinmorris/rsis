@@ -28,12 +28,12 @@ public class TaskTypeController {
     }
 
     @GetMapping("/{id}")
-    public Optional<TaskType> selectTaskTypeInfoById(Long id){
+    public Optional<TaskType> selectTaskTypeInfoById(@PathVariable Long id){
         return taskTypeService.selectTaskTypeInfoById(id);
     }
 
     @PutMapping("/{id}")
-    public TaskType updateTaskInfo(@RequestBody InsertTaskTypeDto req, Long id){
+    public TaskType updateTaskInfo(@RequestBody InsertTaskTypeDto req, @PathVariable Long id){
         return taskTypeService.updateTaskTypeInfo(req, id);
     }
 }

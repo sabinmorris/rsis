@@ -28,12 +28,12 @@ public class BeneficiariesCategoryController {
     }
 
     @GetMapping("/{id}")
-    public Optional<BeneficiariesCategory> selectBeneficiariesCategoryInfoById(Long id){
+    public Optional<BeneficiariesCategory> selectBeneficiariesCategoryInfoById(@PathVariable Long id){
         return beneficiariesCategoryService.selectBeneficiariesCategoryInfoById(id);
     }
 
     @PutMapping("/{id}")
-    public BeneficiariesCategory updateBeneficiariesCategoryInfo(@RequestBody InsertBeneficiariesCategoryDto req, Long id){
+    public BeneficiariesCategory updateBeneficiariesCategoryInfo(@RequestBody InsertBeneficiariesCategoryDto req, @PathVariable Long id){
         return beneficiariesCategoryService.updateBeneficiariesCategoryInfo(req, id);
     }
 }

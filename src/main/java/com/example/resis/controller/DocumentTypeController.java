@@ -34,7 +34,7 @@ public class DocumentTypeController {
     }
 
     @PutMapping("/{id}")
-    public DocumentType updateDocumentTypeInfo(@RequestBody InsertDocumentTypeDto req, Long id){
+    public DocumentType updateDocumentTypeInfo(@RequestBody InsertDocumentTypeDto req, @PathVariable Long id){
         return documentTypeService.updateDocumentTypeInfo(req, id);
     }
 }

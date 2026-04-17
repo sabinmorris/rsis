@@ -33,7 +33,7 @@ public class MembershipTypeController {
     }
 
     @PutMapping("/{id}")
-    public MembershipType updateMembershipTypeInfo(@RequestBody InsertMembershipTypeDto req, Long id){
+    public MembershipType updateMembershipTypeInfo(@RequestBody InsertMembershipTypeDto req, @PathVariable Long id){
         return membershipTypeService.updateMembershipTypeInfo(req,id);
     }
 }

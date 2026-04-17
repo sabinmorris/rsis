@@ -29,12 +29,12 @@ public class IdentificationController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Identification> selectIdentificationInfoById(Long id){
+    public Optional<Identification> selectIdentificationInfoById(@PathVariable Long id){
         return identificationService.selectIdentificationInfoById(id);
     }
 
     @PutMapping("/{id}")
-    public Identification updateIdentificationInfo(@RequestBody InsertIdentificationDto req, Long id){
+    public Identification updateIdentificationInfo(@RequestBody InsertIdentificationDto req, @PathVariable Long id){
         return identificationService.updateIdentificationInfo(req, id);
 
     }

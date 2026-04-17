@@ -28,12 +28,12 @@ public class FeesInfoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<FeesInfo> selectFeeInfoById(Long id){
+    public Optional<FeesInfo> selectFeeInfoById(@PathVariable Long id){
         return feesInfoService.selectFeeInfoById(id);
     }
 
     @PutMapping("/{id}")
-    public FeesInfo updateFeeInfoById(@RequestBody InsertFeeInfoDto req, Long id){
+    public FeesInfo updateFeeInfoById(@RequestBody InsertFeeInfoDto req, @PathVariable Long id){
         return feesInfoService.updateFeeInfo(req, id);
     }
 }
