@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,8 +17,10 @@ public class FeesInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long feeId;
     private String feeName;
+    private BigDecimal feeAmount;
     private LocalDateTime cratedAt;
     private Long createdBy;
     private LocalDateTime updatedAt;
     private Long updatedBy;
+
 }
