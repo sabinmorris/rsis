@@ -5,4 +5,5 @@ import lombok.Data;
 @Data
 public class InsertFeeInfoDto {
     private String feeName;
+    private double feeAmount;
 }
