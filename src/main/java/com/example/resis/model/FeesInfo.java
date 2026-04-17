@@ -16,7 +16,6 @@ public class FeesInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long feeId;
     private String feeName;
-    private double feeAmount;
     private LocalDateTime cratedAt;
     private Long createdBy;
     private LocalDateTime updatedAt;

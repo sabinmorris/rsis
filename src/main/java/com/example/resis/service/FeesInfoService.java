@@ -19,7 +19,6 @@ public class FeesInfoService {
     public FeesInfo insertFeeInfo(InsertFeeInfoDto req){
         FeesInfo feesInfo = new FeesInfo();
         feesInfo.setFeeName(req.getFeeName());
-        feesInfo.setFeeAmount(req.getFeeAmount());
         feesInfo.setCratedAt(LocalDateTime.now());
         feesInfo.setCreatedBy(1L);
         return feesInfoRepository.save(feesInfo);
@@ -38,7 +37,6 @@ public class FeesInfoService {
         if(feesInfo.isPresent()){
             FeesInfo feesInfo1 = feesInfo.get();
             feesInfo1.setFeeName(req.getFeeName());
-            feesInfo1.setFeeAmount(req.getFeeAmount());
             feesInfo1.setUpdatedAt(LocalDateTime.now());
             feesInfo1.setUpdatedBy(2L);
             return feesInfoRepository.save(feesInfo1);
