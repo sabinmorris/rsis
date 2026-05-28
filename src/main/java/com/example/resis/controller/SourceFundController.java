@@ -1,9 +1,11 @@
 package com.example.resis.controller;
 
 import com.example.resis.dto.SourceFundDto;
+import com.example.resis.dto.SourceFundResponseDto;
 import com.example.resis.model.SourceFund;
 import com.example.resis.service.SourceFundService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +29,14 @@ public class SourceFundController {
     }
 
     @GetMapping("/{id}")
+    public ResponseEntity<SourceFundResponseDto> getSourceFund(@PathVariable Long id){
+        SourceFundResponseDto response = sourceFundService.getSourceFund(id);
+
+        return ResponseEntity.ok(response);
+//        return sourceFundService.getSourceFund(id);
+    }
+
+    @GetMapping("/details/{id}")
     public Optional<SourceFund> selectSourceFundInfoById(@PathVariable Long id){
         return sourceFundService.selectSourceFundInfoById(id);
     }

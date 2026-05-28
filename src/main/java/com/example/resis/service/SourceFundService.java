@@ -1,6 +1,8 @@
 package com.example.resis.service;
 
+import com.example.resis.dto.InsertDonorTypeDto;
 import com.example.resis.dto.SourceFundDto;
+import com.example.resis.dto.SourceFundResponseDto;
 import com.example.resis.model.DonorType;
 import com.example.resis.model.SourceFund;
 import com.example.resis.repository.DonorTypeRepository;
@@ -43,6 +45,32 @@ public class SourceFundService {
 
     public Optional<SourceFund> selectSourceFundInfoById(Long id){
         return sourceFundRepository.findById(id);
+    }
+
+    public SourceFundResponseDto getSourceFund(Long id){
+
+        SourceFund sourceFund = sourceFundRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Not found"));
+
+        SourceFundResponseDto dto = new SourceFundResponseDto();
+
+        dto.setSourceFundId(sourceFund.getSourceFundId());
+
+        dto.setSourceFundName(sourceFund.getSourceFundName());
+
+        InsertDonorTypeDto donorDto = new InsertDonorTypeDto();
+
+        donorDto.setDonorTypeId(
+                sourceFund.getDonorType().getDonorTypeId()
+        );
+
+        donorDto.setDonorName(
+                sourceFund.getDonorType().getDonorName()
+        );
+
+        dto.setDonorType(donorDto);
+
+        return dto;
     }
 
     public SourceFund updateSourceFundInfo(SourceFundDto req, Long id){

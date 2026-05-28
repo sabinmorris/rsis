@@ -18,7 +18,6 @@ public class SourceFund {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-//    private Long donorTypeId; relation with donrtype
     @ManyToOne
     @JoinColumn(name = "donorType_Id")
     private DonorType donorType;

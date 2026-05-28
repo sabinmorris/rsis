@@ -18,6 +18,7 @@ public class FeesInfo {
     private Long feeId;
     private String feeName;
     private BigDecimal feeAmount;
+    private String gfsCode;
     private LocalDateTime cratedAt;
     private Long createdBy;
     private LocalDateTime updatedAt;

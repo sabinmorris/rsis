@@ -8,4 +8,5 @@ import java.math.BigDecimal;
 public class InsertFeeInfoDto {
     private String feeName;
     private BigDecimal feeAmount;
+    private String gfsCode;
 }
