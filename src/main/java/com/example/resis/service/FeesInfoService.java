@@ -21,6 +21,7 @@ public class FeesInfoService {
         feesInfo.setFeeName(req.getFeeName());
         feesInfo.setFeeAmount(req.getFeeAmount());
         feesInfo.setGfsCode(req.getGfsCode());
+        feesInfo.setFeeType(req.getFeeType());
         feesInfo.setCratedAt(LocalDateTime.now());
         feesInfo.setCreatedBy(1L);
         return feesInfoRepository.save(feesInfo);
@@ -41,6 +42,7 @@ public class FeesInfoService {
             feesInfo1.setFeeName(req.getFeeName());
             feesInfo1.setFeeAmount(req.getFeeAmount());
             feesInfo1.setGfsCode(req.getGfsCode());
+            feesInfo1.setFeeType(req.getFeeType());
             feesInfo1.setUpdatedAt(LocalDateTime.now());
             feesInfo1.setUpdatedBy(2L);
             return feesInfoRepository.save(feesInfo1);

@@ -1,9 +1,7 @@
 package com.example.resis.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import enumpackage.FeeType;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -19,6 +17,8 @@ public class FeesInfo {
     private String feeName;
     private BigDecimal feeAmount;
     private String gfsCode;
+    @Enumerated(EnumType.STRING)
+    private FeeType FeeType;
     private LocalDateTime cratedAt;
     private Long createdBy;
     private LocalDateTime updatedAt;
