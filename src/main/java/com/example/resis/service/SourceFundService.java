@@ -50,7 +50,7 @@ public class SourceFundService {
     public SourceFundResponseDto getSourceFund(Long id){
 
         SourceFund sourceFund = sourceFundRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Not found"));
+                .orElseThrow(() -> new RuntimeException("Fund not found"));
 
         SourceFundResponseDto dto = new SourceFundResponseDto();
 

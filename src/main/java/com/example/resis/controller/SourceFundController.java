@@ -28,7 +28,7 @@ public class SourceFundController {
         return sourceFundService.selectSourceFundInfo();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/details/{id}")
     public ResponseEntity<SourceFundResponseDto> getSourceFund(@PathVariable Long id){
         SourceFundResponseDto response = sourceFundService.getSourceFund(id);
 
@@ -36,7 +36,7 @@ public class SourceFundController {
 //        return sourceFundService.getSourceFund(id);
     }
 
-    @GetMapping("/details/{id}")
+    @GetMapping("/{id}")
     public Optional<SourceFund> selectSourceFundInfoById(@PathVariable Long id){
         return sourceFundService.selectSourceFundInfoById(id);
     }
