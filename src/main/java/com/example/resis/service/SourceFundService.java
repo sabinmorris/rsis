@@ -80,7 +80,7 @@ public class SourceFundService {
         if (sourceFund.isPresent()){
             SourceFund sourceFund1 = sourceFund.get();
             sourceFund1.setSourceFundName(req.getSourceFundName());
-            // FETCH donor type from database
+            //fetch donor type from database
             DonorType donorType = donorTypeRepository.findById(req.getDonorTypeId())
                     .orElseThrow(() -> new RuntimeException("Donor Type not Found"));
             sourceFund1.setDonorType(donorType);
