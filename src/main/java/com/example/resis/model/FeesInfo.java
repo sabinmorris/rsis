@@ -17,7 +17,7 @@ public class FeesInfo {
     private String feeName;
     private BigDecimal feeAmount;
     private String gfsCode;
-    private String feeCode;
+    private String feeCode; //add this column for fee code
     @Enumerated(EnumType.STRING)
     private FeeType FeeType;
     private LocalDateTime cratedAt;
