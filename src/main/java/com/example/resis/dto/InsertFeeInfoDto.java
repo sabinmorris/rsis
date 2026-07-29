@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 public class InsertFeeInfoDto {
     private String feeName;
     private BigDecimal feeAmount;
+    private String feeCode;
     private String gfsCode;
     @Enumerated(EnumType.STRING)
     private FeeType FeeType;
