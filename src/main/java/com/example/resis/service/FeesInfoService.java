@@ -6,6 +6,7 @@ import com.example.resis.repository.FeesInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -29,11 +30,17 @@ public class FeesInfoService {
     }
 
     public List<FeesInfo> selectFeeInfo(){
+
         return feesInfoRepository.findAll();
     }
 
     public Optional<FeesInfo> selectFeeInfoById(Long id){
+
         return feesInfoRepository.findById(id);
+    }
+    //filter fees info by fees code
+    public Optional<FeesInfo> selectFeeInfoByFeeCode(String feeCode){
+        return feesInfoRepository.findByFeeCode(feeCode);
     }
 
     public FeesInfo updateFeeInfo(InsertFeeInfoDto req, Long id){

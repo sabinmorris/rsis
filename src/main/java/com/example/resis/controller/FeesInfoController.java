@@ -27,9 +27,15 @@ public class FeesInfoController {
         return feesInfoService.selectFeeInfo();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public Optional<FeesInfo> selectFeeInfoById(@PathVariable Long id){
         return feesInfoService.selectFeeInfoById(id);
+    }
+
+    //select by feeCode
+    @GetMapping("/code/{feeCode}")
+    public Optional<FeesInfo>selectFeeInfoByFeeCode(@PathVariable String feeCode){
+        return feesInfoService.selectFeeInfoByFeeCode(feeCode);
     }
 
     @PutMapping("/{id}")
