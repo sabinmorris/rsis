@@ -12,6 +12,7 @@ public class InsertFeeInfoDto {
     private String feeName;
     private BigDecimal feeAmount;
     private String feeCode;
+    private String subSpCode;
     private String gfsCode;
     @Enumerated(EnumType.STRING)
     private FeeType FeeType;

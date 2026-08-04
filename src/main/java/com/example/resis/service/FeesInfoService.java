@@ -22,6 +22,7 @@ public class FeesInfoService {
         feesInfo.setFeeName(req.getFeeName());
         feesInfo.setFeeAmount(req.getFeeAmount());
         feesInfo.setFeeCode(req.getFeeCode());
+        feesInfo.setSubSpCode(req.getSubSpCode());
         feesInfo.setGfsCode(req.getGfsCode());
         feesInfo.setFeeType(req.getFeeType());
         feesInfo.setCratedAt(LocalDateTime.now());
@@ -50,6 +51,7 @@ public class FeesInfoService {
             feesInfo1.setFeeName(req.getFeeName());
             feesInfo1.setFeeAmount(req.getFeeAmount());
             feesInfo1.setFeeCode(req.getFeeCode());
+            feesInfo1.setSubSpCode(req.getSubSpCode());
             feesInfo1.setGfsCode(req.getGfsCode());
             feesInfo1.setFeeType(req.getFeeType());
             feesInfo1.setUpdatedAt(LocalDateTime.now());
