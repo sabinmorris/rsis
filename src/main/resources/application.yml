@@ -6,7 +6,7 @@ spring:
     url: jdbc:postgresql://102.214.45.147:5440/rsis_db?currentSchema=public
     # url: jdbc:postgresql://102.214.45.147:5440/rsis_db?currentSchema=public
     username: ortamisemim
-    password: ortamisemimDb@2021
+    password: ortamisemimDbL@2026
   jpa:
     hibernate:
       ddl-auto: update
