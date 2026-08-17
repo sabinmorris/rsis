@@ -12,5 +12,5 @@ services:
 #rsis_default
 networks:
   default:
-      name: bridge
-      driver: bridge
+    external:
+      name: rsis_default
