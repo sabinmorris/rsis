@@ -13,3 +13,4 @@ services:
 networks:
   default:
       name: rsis_default
+      driver: bridge
