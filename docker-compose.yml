@@ -12,5 +12,4 @@ services:
 #rsis_default
 networks:
   default:
-    external:
       name: rsis_default
