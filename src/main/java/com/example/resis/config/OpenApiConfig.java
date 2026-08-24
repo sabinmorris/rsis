@@ -29,7 +29,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 @Server(url = "http://102.214.45.147:6045/lookup-service", description = "TEST SERVER"),
                 @Server(url = "http://102.214.45.147:6041/", description = "TEST SERVER"),
                 @Server(url = "http://localhost:6041/", description = "LOCAL"),
-                @Server(url = "rsisbackend.tamisemim.go.tz", description = "LIVE SERVER")
+                @Server(url = "https://rsisbackend.tamisemim.go.tz", description = "LIVE SERVER")
         },
 
         security = {
