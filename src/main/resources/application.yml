@@ -1,36 +1,40 @@
-#server:
-#  port: 6041
-#spring:
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    #url: jdbc:postgresql://102.207.206.57:5440/rsis_db?currentSchema=public
-#    url: jdbc:postgresql://102.214.45.147:5440/rsis_db?currentSchema=public
-#    username: ortamisemim
+server:
+  port: 6041
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    #url: jdbc:postgresql://102.207.206.57:5440/rsis_db?currentSchema=public
+    url: jdbc:postgresql://102.214.45.147:5440/rsis_db?currentSchema=public
+    username: ortamisemim
+#    This for test server
+    password: ortamisemimDb@2021
+    
+#    This for live server
 #    password: ortamisemimDbL@2026
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.PostgreSQLDialect
-#        #dialect: org.hibernate.dialect.SQLServerDialect
-#        jdbc:
-#          lob:
-#            non_contextual_creation: true
-#    show-sql: true
-#log4j:
-#  appender:
-#    stdout: org.apache.log4j.ConsoleAppender
-#    stdout.Target: System.out
-#    stdout.layout: org.apache.log4j.PatternLayout
-#    stdout.layout.ConversionPattern: "%d{HH:mm:ss,SSS} %-5p [%c] - %m%n"
-#  logger:
-#    org:
-#      hibernate: info
-#      hibernate.SQL: debug
-#  rootLogger: info, stdout
-#logging:
-#  level:
-#    org:
-#      hibernate:
-#        SQL: debug
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        #dialect: org.hibernate.dialect.SQLServerDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+log4j:
+  appender:
+    stdout: org.apache.log4j.ConsoleAppender
+    stdout.Target: System.out
+    stdout.layout: org.apache.log4j.PatternLayout
+    stdout.layout.ConversionPattern: "%d{HH:mm:ss,SSS} %-5p [%c] - %m%n"
+  logger:
+    org:
+      hibernate: info
+      hibernate.SQL: debug
+  rootLogger: info, stdout
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
