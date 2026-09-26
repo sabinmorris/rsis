@@ -2,39 +2,88 @@ server:
   port: 6041
 spring:
   datasource:
+    #    driver-class-name: org.postgresql.Driver
+    #    url: jdbc:postgresql://102.214.45.147:5440/rsis_db?currentSchema=public
+    #   # url: jdbc:postgresql://102.214.45.147:5440/mutm_db?currentSchema=public
+    #    username: ortamisemim
+    #    password: ortamisemimDb@2021 test server
+    #    password: ortamisemimDB@2026 live server
     driver-class-name: org.postgresql.Driver
-    #url: jdbc:postgresql://102.207.206.57:5440/rsis_db?currentSchema=public
-    url: jdbc:postgresql://102.214.45.147:5440/rsis_db?currentSchema=public
-    username: ortamisemim
-#    This for test server
-    password: ortamisemimDb@2021
-    
-#    This for live server
-#    password: ortamisemimDbL@2026
+    password: ${DB_PASS}
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}?currentSchema=public
+    username: ${DB_USERNAME}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${DDL_STATUS}
+
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        #dialect: org.hibernate.dialect.SQLServerDialect
         jdbc:
           lob:
             non_contextual_creation: true
+
     show-sql: true
-log4j:
-  appender:
-    stdout: org.apache.log4j.ConsoleAppender
-    stdout.Target: System.out
-    stdout.layout: org.apache.log4j.PatternLayout
-    stdout.layout.ConversionPattern: "%d{HH:mm:ss,SSS} %-5p [%c] - %m%n"
-  logger:
-    org:
-      hibernate: info
-      hibernate.SQL: debug
-  rootLogger: info, stdout
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${AUTH_URL}
+          jwk-set-uri: ${AUTH_URL}/.well-known/jwks.json
+
+auth:
+  service:
+    issuer: ${AUTH_URL}
+    jwk-set-uri: ${AUTH_URL}/.well-known/jwks.json
+    introspection-url: http://auth:6044/api/internal/tokens/introspect
+    internal-api-key: ${AUTH_INTERNAL_API_KEY}
+
 logging:
   level:
-    org:
-      hibernate:
-        SQL: debug
+    org.hibernate.SQL: DEBUG
+    org.springframework.security: DEBUG
+    rsis.registration.security: DEBUG
+
+
+
+#server:
+#  port: 6041
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    #url: jdbc:postgresql://102.207.206.57:5440/rsis_db?currentSchema=public
+#    url: jdbc:postgresql://102.214.45.147:5440/rsis_db?currentSchema=public
+#    username: ortamisemim
+##    This for test server
+#    password: ortamisemimDb@2021
+#
+##    This for live server
+##    password: ortamisemimDbL@2026
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        #dialect: org.hibernate.dialect.SQLServerDialect
+#        jdbc:
+#          lob:
+#            non_contextual_creation: true
+#    show-sql: true
+#log4j:
+#  appender:
+#    stdout: org.apache.log4j.ConsoleAppender
+#    stdout.Target: System.out
+#    stdout.layout: org.apache.log4j.PatternLayout
+#    stdout.layout.ConversionPattern: "%d{HH:mm:ss,SSS} %-5p [%c] - %m%n"
+#  logger:
+#    org:
+#      hibernate: info
+#      hibernate.SQL: debug
+#  rootLogger: info, stdout
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        SQL: debug

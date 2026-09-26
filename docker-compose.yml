@@ -7,10 +7,35 @@ services:
     restart: always
     ports:
       - 6041:6041
+    env_file:
+      - /usr/local/environment/.env
+
+    volumes:
+      - /usr/local/environment/.env:/usr/local/environment/.env
+    environment:
+      - DOTENV_PATH=/usr/local/environment/.env
 #    volumes:
 #      - /home/development/certificate:/home
-#rsis_default
 networks:
   default:
     external:
       name: rsis_default
+
+
+
+#version: "3.7"
+#services:
+#  lookup:
+#    image: lookup-api:latest
+#    container_name: lookup-api
+#    build: .
+#    restart: always
+#    ports:
+#      - 6041:6041
+##    volumes:
+##      - /home/development/certificate:/home
+##rsis_default
+#networks:
+#  default:
+#    external:
+#      name: rsis_default
